@@ -385,8 +385,10 @@ const Lab2 = ({generatedArr, setGeneratedArr}) => {
     }
 
     const task7 = () => {
-        const {A, E} = getUselessCalculations()
-        let Aresult = '', Eresult = ''
+        const {A, E, s, xV} = uselessCalculations
+        const v = (s / xV) * 100
+        const koef = Math.round(v * 100) / 100
+        let Aresult = '', Eresult = '', koefResult = ''
         if(A === 0) {
             Aresult = 'Розподіл має симетричну форму.'
         }
@@ -402,7 +404,13 @@ const Lab2 = ({generatedArr, setGeneratedArr}) => {
         else {
             Eresult = 'Полігон варіаційного ряду має більш пологу вершину в порівняння з нормальною кривою.'
         }
-        const result = `Коефіцієнт асиметрії: ${Aresult}/nЕксцес: ${Eresult}`
+        if(koef > 100) {
+            koefResult = 'Значення вибірки неоднорідні'
+        }
+        else {
+            koefResult = 'Значення вибірки однорідні'
+        }
+        const result = `Коефіцієнт асиметрії: ${Aresult}/nЕксцес: ${Eresult}/nКоефіцієнт варіації: ${koefResult}`
         setConclusions(result)
     }
 
