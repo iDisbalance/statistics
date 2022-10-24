@@ -237,7 +237,7 @@ const Lab2 = ({generatedArr, setGeneratedArr}) => {
         for(let i = 0; Xstart < xMax; i++) {
             result.i.push(i+1)
             result.intervals.push(`${Xstart} - ${Xstart + roundedK}`)
-            result.intervalMiddles.push((Xstart + roundedK + Xstart) / 2)
+            result.intervalMiddles.push(Math.round(((Xstart + roundedK + Xstart) / 2) * 100) / 100)
             const ni = generatedArr.filter(el => el > Xstart && el <= Xstart + roundedK).length
             result.frequency.push(ni)
             result.subFrequency.push(ni / generatedArr.length)
