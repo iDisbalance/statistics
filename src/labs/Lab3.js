@@ -39,13 +39,20 @@ const Lab3 = ({generatedArr, setGeneratedArr}) => {
         const tableData = makeTableData(generatedArr)
         tableData.intervalMiddles.forEach((middle, id) => {
             xi += middle
-            xi2 += Math.round(Math.pow(middle, 2))
-            xi3 += Math.round(Math.pow(middle, 3))
-            xi4 += Math.round(Math.pow(middle, 4))
-            yi += Math.round(tableData.frequency[id])
-            xy += Math.round(middle * tableData.frequency[id])
-            x2y += Math.round(Math.pow(middle, 2) * tableData.frequency[id])
+            xi2 += Math.round(Math.pow(middle, 2) * 100) / 100
+            xi3 += Math.round(Math.pow(middle, 3) * 100) / 100
+            xi4 += Math.round(Math.pow(middle, 4) * 100) / 100
+            yi += Math.round(tableData.frequency[id] * 100) / 100
+            xy += Math.round(middle * tableData.frequency[id] * 100) / 100
+            x2y += Math.round(Math.pow(middle, 2) * tableData.frequency[id] * 100) / 100
         })
+        xi = Math.round(xi * 10) / 10
+        xi2 = Math.round(xi2 * 100) / 100
+        xi3 = Math.round(xi3 * 100) / 100
+        xi4 = Math.round(xi4 * 100) / 100
+        yi = Math.round(yi * 100) / 100
+        xy = Math.round(xy * 100) / 100
+        x2y = Math.round(x2y * 100) / 100
         const dMain = determinant([[xi4,xi3,xi2],[xi3,xi2,Math.round(xi)],[xi2,Math.round(xi),tableData.intervalMiddles.length]])
         const da = determinant([[x2y,xy,yi],[xi3,xi2,Math.round(xi)],[xi2,Math.round(xi),tableData.intervalMiddles.length]])
         const db = determinant([[xi4,xi3,xi2],[x2y,xy,yi],[xi2,Math.round(xi),tableData.intervalMiddles.length]])
@@ -61,7 +68,7 @@ ${xi4}a + ${xi3}b + ${xi2}c = ${x2y}/n
 ${xi3}a + ${xi2}b + ${Math.round(xi)}c = ${xy}/n
 ${xi2}a + ${Math.round(xi)}b + ${tableData.intervalMiddles.length}c = ${yi}/n
 Після застосування правила Крамера, маємо: а = ${a}, b = ${b}, c = ${c}/n
-Отже, y = ${a}x^2 - ${b}x + ${c}`
+Отже, y = ${a}x^2 ${b > 0 ? `+ ${b}` : `- ${Math.abs(b)}`}x ${c > 0 ? `+ ${c}` : `- ${Math.abs(c)}`}`
         setData2(intro)
     }
 
