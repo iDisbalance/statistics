@@ -19,7 +19,7 @@ const Lab2 = ({generatedArr, setGeneratedArr}) => {
     const [moda, setModa] = useState('')
 
     const task8 = () => {
-        const numbers = generateArrayOfNumbers(100, false, 97, 142)
+        const numbers = generateArrayOfNumbers(100, false, 35, 80)
         setGeneratedArr(numbers)
     }
 
@@ -246,8 +246,8 @@ const Lab2 = ({generatedArr, setGeneratedArr}) => {
             buf = buf + ni
             Xstart += roundedK
         }
-        result.sums = [Math.round(result.collectedFrequency[result.collectedFrequency.length - 1]), 
-        Math.round(result.subFrequency.reduce((previousValue, currentValue) => previousValue + currentValue))]
+        result.sums = [null, null, Math.round(result.collectedFrequency[result.collectedFrequency.length - 1]), 
+        Math.round(result.subFrequency.reduce((previousValue, currentValue) => previousValue + currentValue)), null, null]
         return result
     }
 

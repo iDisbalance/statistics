@@ -108,19 +108,15 @@ const Task = ({ text, onRun, data }) => {
                                 <td className="tableCell first">
                                     Сума
                                 </td>
-                                <td className="tableCell"/>
-                                <td className="tableCell"/>
                                 {
                                     data.sums.map(sum => {
                                         return (
-                                            <td className="tableCell first">
+                                            <td className={sum ? "tableCell first" : "tableCell"}>
                                                 {sum}
                                             </td>
                                         )
                                     })
                                 }
-                                <td className="tableCell"/>
-                                <td className="tableCell"/>
                             </tr>
                         </table>
                     ) : data?.line ? <Line options={data.line.options} data={data.line.data}/> :
