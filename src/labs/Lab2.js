@@ -19,7 +19,7 @@ const Lab2 = ({generatedArr, setGeneratedArr}) => {
     const [moda, setModa] = useState('')
 
     const task8 = () => {
-        const numbers = generateArrayOfNumbers(100, false, 35, 80)
+        const numbers = generateArrayOfNumbers(100, false, 18, 65)
         setGeneratedArr(numbers)
     }
 
