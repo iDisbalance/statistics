@@ -122,6 +122,19 @@ const Task = ({ text, onRun, data }) => {
                     ) : data?.line ? <Line options={data.line.options} data={data.line.data}/> :
                     data?.bar ? <Bar data={data.bar.data}/> :
                     data?.line2 ? <Line options={data.line2.options} data={data.line2.data}/> :
+                    data?.complex ? <>
+                        {data.data.split('/n').map(line => {
+                            return (
+                                <p>{line}</p>
+                            )
+                        })}
+                        {data.customComponent()}
+                        {data.additionalData.split('/n').map(line => {
+                            return (
+                                <p>{line}</p>
+                            )
+                        })}
+                    </>:
                     data && formatData(data).map((el, id) => {
                         return (
                         <div className="dataWrapper">

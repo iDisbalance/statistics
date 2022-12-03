@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import Lab1 from './labs/Lab1';
 import Lab2 from './labs/Lab2';
 import Lab3 from './labs/Lab3';
+import Lab4 from './labs/Lab4';
 
 function App() {
   const [generatedArr, setGeneratedArr] = useState([])
@@ -21,6 +22,10 @@ function App() {
     {
       number: 3,
       component: <Lab3 generatedArr={generatedArr} setGeneratedArr={setGeneratedArr}/>
+    },
+    {
+      number: 4,
+      component: <Lab4 generatedArr={generatedArr} setGeneratedArr={setGeneratedArr}/>
     },
   ]
 
