@@ -43,6 +43,7 @@ export const getBaseLog = (x, y) => {
   }
 
   export const makeTableData = (generatedArr) => {
+    console.log(generatedArr)
     const xMax = generatedArr[generatedArr.length - 1]
     const xMin = generatedArr[0]
     const r = xMax - xMin

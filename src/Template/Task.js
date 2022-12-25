@@ -27,6 +27,124 @@ ChartJS.register(
 );
 
 const Task = ({ text, onRun, data }) => {
+
+    const renderAdvancedTable = (data) => {
+        console.log("renderAdvancedTable")
+        return (
+            <table className="table advanced">
+                <tr className="tableRow">
+                    <td className="tableCell" rowspan="3">
+                        Вік<br/>
+                        працівників<br/>
+                        державного<br/>
+                        реєстру ФОП,<br/>
+                        років
+                    </td>
+                    <td className="tableCell" rowspan="2">
+                        Середини<br/>
+                        інтервалів
+                    </td>
+                    <td className="tableCell" colspan="8">
+                        Заробітня плата працівників тис. грн
+                    </td>
+                    <td className="tableCell" rowspan="3">
+                        Всього
+                    </td>
+                    <td className="tableCell" rowspan="3">
+                        Групове<br/>
+                        середнє,<br/>
+                        років
+                    </td>
+                </tr>
+                <tr className="tableRow">
+                    {
+                        data.yIntervals.map(interval => {
+                            return (
+                                <td className="tableCell">
+                                    {interval}
+                                </td>
+                            )
+                        })
+                    }
+                </tr>
+                <tr className="tableRow">
+                    <td className="tableCell">
+                        x/y
+                    </td>
+                    {
+                        data.yMiddles.map(middle => {
+                            return (
+                                <td className="tableCell">
+                                    {middle}
+                                </td>
+                            )
+                        })
+                    }
+                </tr>
+                {data.rows.map(row => {
+                    return (
+                        <tr className="tableRow">
+                            <td className="tableCell">
+                                {row.interval}
+                            </td>
+                            <td className="tableCell">
+                                {row.middle}
+                            </td>
+                            {
+                                row.values.map(val => {
+                                    return (
+                                        <td className="tableCell">
+                                            {val || '-'}
+                                        </td>
+                                    )
+                                })
+                            }
+                            <td className="tableCell">
+                                {row.sum}
+                            </td>
+                            <td className="tableCell">
+                                {row.groupMiddles}
+                            </td>
+                        </tr>
+                    )
+                })}
+                <tr className="tableRow">
+                    <td className="tableCell" colspan="2">
+                        Всього
+                    </td>
+                    {
+                        data.yValues.map(value => {
+                            return (
+                                <td className="tableCell">
+                                    {value}
+                                </td>
+                            )
+                        })
+                    }
+                    <td className="tableCell">
+                        100
+                    </td>
+                </tr>
+                <tr className="tableRow">
+                    <td className="tableCell" colspan="2">
+                        Групове середнє
+                    </td>
+                    {
+                        data.xGroupMiddles.map(value => {
+                            return (
+                                <td className="tableCell">
+                                    {value}
+                                </td>
+                            )
+                        })
+                    }
+                    <td className="tableCell">
+                        -
+                    </td>
+                </tr>
+            </table>
+        )
+    }
     const formatData = (data) => {
         const formatedData = []
         let bufArr = [] 
@@ -73,7 +191,7 @@ const Task = ({ text, onRun, data }) => {
                             <p>{line}</p>
                         )
                     })
-                ) : (
+                ) : data?.rows ? renderAdvancedTable(data) : (
                     data?.colls ? (
                         <table className="table">
                             <tr className="tableRow">
