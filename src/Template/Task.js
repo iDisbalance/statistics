@@ -34,18 +34,18 @@ const Task = ({ text, onRun, data }) => {
             <table className="table advanced">
                 <tr className="tableRow">
                     <td className="tableCell" rowspan="3">
-                        Вік<br/>
-                        працівників<br/>
-                        державного<br/>
-                        реєстру ФОП,<br/>
-                        років
+                        Вік людей, які<br/>
+                        зареєструвались у<br/>
+                        Facebook за перший<br/>
+                        тиждень жовтня 2022,<br/>
+                        років<br/>
                     </td>
                     <td className="tableCell" rowspan="2">
                         Середини<br/>
                         інтервалів
                     </td>
                     <td className="tableCell" colspan="8">
-                        Заробітня плата працівників тис. грн
+                        Кількість годин, проведених у Facebook користувачами за перший тиждень жовтня 2022, годин
                     </td>
                     <td className="tableCell" rowspan="3">
                         Всього
