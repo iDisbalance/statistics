@@ -610,8 +610,8 @@ Sum(Xi * Yj * Nij) = ${xyn};/n
 
 Знаходимо вибіркові характеристики і параметри рівняння регресії:/n
 
-Хсер = ${Хmid} (тис. грн);/n
-Yсер = ${Ymid} (років);/n
+Хсер = ${Хmid} (років);/n
+Yсер = ${Ymid} (годин);/n
 S^2x = ${S2x};/n
 S^2y = ${S2y};/n
 μ = ${miu};/n
@@ -623,8 +623,8 @@ bxy = ${bxy};/n
 Yx - ${Ymid} = ${byx}(x - ${Хmid});/n
 Yx = ${byx}x ${deltaY > 0 ? `+ ${deltaY}` : `${deltaY}`};/n
 
-Xy - ${Хmid} = ${bxy}(x - ${Ymid});/n
-Xy = ${bxy}x ${deltaX > 0 ? `+ ${deltaX}` : `${deltaX}`};/n
+Xy - ${Хmid} = ${bxy}(у - ${Ymid});/n
+Xy = ${bxy}у ${deltaX > 0 ? `+ ${deltaX}` : `${deltaX}`};/n
 
 Коефіцієнт кореляції:/n
 
