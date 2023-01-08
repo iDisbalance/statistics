@@ -722,8 +722,8 @@ ${bxyLeft} <= bxy <= ${bxyRight}/n
         const sigma2 = Math.round((sumDelta2 / 100) * 100) / 100
         const ryx = Math.round((Math.sqrt(sigma2/S2y)) * 100) / 100
         const answer = `
-σ^2 = ${sigma}
-η = ${nyx}
+σ^2 = ${sigma}/n
+η = ${nyx}/n
 
 Значення μ близьке до значення r = ${koef}. Тому припущення про лінійний зв'язок є обгрунтованим/n
 
