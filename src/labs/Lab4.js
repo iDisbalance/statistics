@@ -21,7 +21,6 @@ const Lab4 = ({generatedArr, setGeneratedArr}) => {
             (previousValue, currentValue) => previousValue + currentValue,
             0
         ) / 100) * 100) / 100
-        console.log(xV)
         const subS = generatedArr.map(num => Math.round(Math.pow((num - xV), 2) * 100) / 100)
         const S = Math.round((subS.reduce(
             (previousValue, currentValue) => previousValue + currentValue,
@@ -43,7 +42,9 @@ const Lab4 = ({generatedArr, setGeneratedArr}) => {
         const conclusion = `З ймовірністю ${ft} середній вік людей, які зареєструвались у соціальній мережі Facebook /n
         за перший тиждень жовтня 2022 року, знаходиться в межах від ${Math.round((xV - delta) * 100) / 100} до ${Math.round((xV + delta) * 100) / 100} років/n`
         const conclusion2 = `Отже, з надійністю ${ft} дисперсія знаходиться в межах від ${finalLeft} до ${finalRight}`
-        const interval = `${Math.round((xV - delta) * 100) / 100} ≤ x₀ ≤ ${Math.round((xV + delta) * 100) / 100}/n
+        const interval = `x - Δ ≤ x₀ ≤ x + Δ /n
+Δ = t * σ = ${delta} /n
+${Math.round((xV - delta) * 100) / 100} ≤ x₀ ≤ ${Math.round((xV + delta) * 100) / 100}/n
 ${conclusion}
 ./n
 ${finalLeft} ≤ σ² ≤ ${finalRight}/n
