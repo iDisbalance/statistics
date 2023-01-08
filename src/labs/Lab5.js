@@ -140,7 +140,7 @@ const Lab5 = ({generatedArr, setGeneratedArr}) => {
     }
 
     const task1 = () => {
-        const arr = generateArrayOfNumbers(100, false, 10, 100)
+        const arr = generateArrayOfNumbers(100, false, 19, 69)
         setSecondArray(arr)
         const data = {
             types: ['array'],
