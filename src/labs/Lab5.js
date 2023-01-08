@@ -168,9 +168,9 @@ const Lab5 = ({generatedArr, setGeneratedArr}) => {
             const minAge = sortedData[0]?.age || sortedData[0]
             const data = {
                 types: ['string'],
-                data: `Розмах вибірки по віку: ${maxAge - minAge}`
+                data: `Розмах вибірки: ${maxAge - minAge}`
             }
-            setData3(`Розмах вибірки по віку: ${maxAge - minAge}`)
+            setData3(`Розмах вибірки: ${maxAge - minAge}`)
             setResult(data)
         }
     }
